@@ -51,7 +51,7 @@
     bidule()    
   #+END_SRC
 
-* Join() et split() sont sur un bateau
+* =join()= et =split()= sont sur un bateau
 
   #+BEGIN_SRC python
     crypto = ', '.join(['btc', 'eth', 'ltc'])
@@ -79,4 +79,4 @@
   + Comment afficher des chaînes brutes
   + Comment écrire des chaînes sur plusieurs lignes
   + Comment écrire des commentaires multi-lignes
-  + Join() et son accolites split()
+  + =join()= et son accolites =split()=
