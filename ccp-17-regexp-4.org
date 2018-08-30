@@ -30,6 +30,7 @@
     mo2 = nonGreedyHaRegex.search('HaHaHaHaHa')
     print(mo2.group())
   #+END_SRC
+
 * La méthode =findall()=
 
   #+BEGIN_SRC python
