@@ -16,7 +16,7 @@
 	print("There is no 'Why' at the beginning!")
   #+END_SRC
 
-  La regex =r= ='= =\d$= ='= correspond aux chaînes finissant avec un chiffre.
+  La regex =r' \d$' = correspond aux chaînes finissant avec un chiffre.
 
   #+BEGIN_SRC python
     finishWithDigit = re.compile(r'\d$')
@@ -25,7 +25,7 @@
 	print('There is no digit')
   #+END_SRC
 
-  La regex =r'= =^\d+$'= correspond aux chaînes qui commencent et
+  La regex =r' ^\d+$' = correspond aux chaînes qui commencent et
   finissent par un nombre.
 
   #+BEGIN_SRC python
