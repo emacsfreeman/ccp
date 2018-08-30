@@ -16,7 +16,7 @@
 	print('Pattern not found')
   #+END_SRC
   
- * Correspondance gloutonne et non gloutonne
+* Correspondance gloutonne et non gloutonne
 
   #+BEGIN_SRC python
     import re
