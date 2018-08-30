@@ -1,0 +1,17 @@
+#+TITLE: Computer Code Python CCP 17 : expressions régulières 4
+#+AUTHOR: Laurent Garnier
+
+* Correspondance avec un nombre précis de répétitions
+
+  #+BEGIN_SRC python
+    import re
+
+    mouhaRegex = re.compile(r'mou(Ha){4}')
+
+    mo1 = mouhaRegex.search('mouHaHaHaHa')
+    print(mo1.group())
+
+    mo2 = mouhaRegex.search('mouHaHa')
+    if mo2 == None:
+	print('Pattern not found')
+  #+END_SRC
