@@ -43,7 +43,7 @@
 
     print(phoneRegex.findall('Cell: 415-555-9999 Work: 212-555-0000'))
 
-    phoneRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d/d\d\d)')
+    phoneRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)')
     print(phoneRegex.findall('Cell: 415-555-9999 Work: 212-555-0000'))
   #+END_SRC
 * Bilan
