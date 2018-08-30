@@ -36,7 +36,7 @@
   #+BEGIN_SRC python
     import re
 
-    phoneRegex = re.compile(r'\d\d\d-\d\d\d-\d/d\d\d')
+    phoneRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
 
     mo = phoneRegex.search('Cell: 415-555-9999 Work: 212-555-0000')
     print(mo.group())
