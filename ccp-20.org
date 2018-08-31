@@ -14,8 +14,10 @@
     noNewlineRegex = re.compile('.*')
     print(noNewlineRegex.search('Liberté.\nEgalité.\nFraternité.').group())
 
+    print('-' * 30)
+
     newlineRegex = re.compile('.*', re.DOTALL)
-    print(newlineRegex.search('Liberté.\nEgalité.\nFraternité.').group()))
+    print(newlineRegex.search('Liberté.\nEgalité.\nFraternité.').group())
   #+END_SRC
 
 * Récapitulatif des symboles des regex
@@ -54,10 +56,12 @@
     print(regex1.search('Bonjour les apprentis pythoniens.').group())
 
     regex2 = re.compile('BONJOUR')
-    print(regex1.search('Bonjour les apprentis pythoniens.').group())
+    if regex2.search('Bonjour les apprentis pythoniens.') == None:
+	print('no match')
 
     regex3 = re.compile('bonjour')
-    print(regex1.search('Bonjour les apprentis pythoniens.').group())
+    if regex3.search('Bonjour les apprentis pythoniens.')  == None:
+	print('no match')
   #+END_SRC
 
   Mais parfois vous voulez simplement la correspondance avec les
@@ -69,11 +73,11 @@
     regex1 = re.compile('Bonjour', re.I)
     print(regex1.search('Bonjour les apprentis pythoniens.').group())
 
-    regex2 = re.compile('BONJOUR', re.IGNORE)
-    print(regex1.search('Bonjour les apprentis pythoniens.').group())
+    regex2 = re.compile('BONJOUR', re.IGNORECASE)
+    print(regex2.search('Bonjour les apprentis pythoniens.').group())
 
     regex3 = re.compile('bonjour', re.I)
-    print(regex1.search('Bonjour les apprentis pythoniens.').group())
+    print(regex3.search('Bonjour les apprentis pythoniens.').group())
   #+END_SRC
 * Bilan
 
