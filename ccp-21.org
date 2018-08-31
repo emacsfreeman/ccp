@@ -19,6 +19,8 @@
   en tant que partie de substitution.
 
   #+BEGIN_SRC python
+    import re
+
     agentNamesRegex = re.compile(r'Agent (\w)\w*')
     a = agentNamesRegex.sub(r'\1****', 'Agent Alice told Agent Carol that Agent Eve know Agent Bob was a double agent.')
     print(a)
@@ -35,6 +37,8 @@
 
     # Version illisible
     phoneRegex = re.compile(r'((\d{3}|\(\d{3}\))?(\s|-|\.)?\d{3}(\s|-|\.)\d{4}(\s*(ext|x|ext.)\s*\d{2,5})?)')
+    a = phoneRegex.sub(r'\1***', '(415)-555-4242')
+    print(a)
 
     # Version plus pratique
     phoneRegex = re.compile(r'''(
@@ -45,6 +49,8 @@
 	\d{4}                         # last 4 digits
 	(\s*(ext|x|ext.)\s*\d{2,5})?  # extension
 	)''', re.VERBOSE)
+    b = phoneRegex.sub(r'\2***', '(415)-555-4242')
+    print(b)
   #+END_SRC
 * Le trio de choc
   Comment faire si vous voulez utiliser =re.VERBOSE= pour écrire des
@@ -58,11 +64,14 @@
     import re
 
     someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL)
-    phraseTest = "Souvent en informatique les gens utilise la chaîne 'foo'.")
-    print(someRegexValue(phraseTest).group())
+    phraseTest = "Souvent en informatique les gens utilise la chaîne 'foo'."
+    a = someRegexValue.search(phraseTest).group()
+    print(a)
 
-    someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE
-    print(someRegexValue(phraseTest).group())
+    print('-' * 30)
+
+    someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
+    print(a)
   #+END_SRC
 * Bilan
   Nous avons vu dans ce cours :
