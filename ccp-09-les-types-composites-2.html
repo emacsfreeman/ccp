@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Computer Code Python CCP 09 : les types composites 2</title>
+<!-- 2018-09-03 Mon 20:10 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Laurent Garnier">
+<script type="text/javascript" src="post.js"></script>
+<style type="text/css">
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+</head>
+<body>
+<div id="content" class="container">
+<div class="row"><div class="col-md-9"><h1 class="title">Computer Code Python CCP 09 : les types composites 2</h1>
+
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> L'affectation parallèle</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a0522d;">btc</span> = [<span style="color: #8b2252;">'premier'</span>, <span style="color: #8b2252;">'plus gros r&#233;seau'</span>, <span style="color: #8b2252;">'plus gros volume'</span>]
+<span style="color: #a0522d;">anciennete</span> = btc[0]
+<span style="color: #a0522d;">reseau</span> = btc[1]
+<span style="color: #a0522d;">volume</span> = btc[2]
+<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">"La m&#234;me chose en 2 lignes"</span>)
+<span style="color: #a0522d;">btc</span> = [<span style="color: #8b2252;">'premier'</span>, <span style="color: #8b2252;">'plus gros r&#233;seau'</span>, <span style="color: #8b2252;">'plus gros volume'</span>]
+<span style="color: #a0522d;">anciennete</span>, <span style="color: #a0522d;">reseau</span>, <span style="color: #a0522d;">volume</span> = btc
+<span style="color: #a0522d;">c1</span>, <span style="color: #a0522d;">c2</span> = <span style="color: #8b2252;">'btc'</span>, <span style="color: #8b2252;">'eth'</span>
+<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">"c1 ="</span>, c1, <span style="color: #8b2252;">"c2 ="</span>, c2)
+<span style="color: #a0522d;">c2</span>, <span style="color: #a0522d;">c1</span> = c1, c2
+<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">"c1 ="</span>, c1, <span style="color: #8b2252;">"c2 ="</span>, c2)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Insertion et ajout d'éléments</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a0522d;">ma_liste</span> = []
+ma_liste.append(<span style="color: #8b2252;">'elt1'</span>)
+ma_liste.append(2)
+ma_liste.append(<span style="color: #008b8b;">True</span>)
+<span style="color: #a020f0;">print</span>(ma_liste)
+ma_liste.insert(0, <span style="color: #8b2252;">'elt0'</span>)
+ma_liste.insert(2, 3)
+<span style="color: #a020f0;">print</span>(ma_liste)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Enlever des éléments</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a0522d;">PoW</span> = [<span style="color: #8b2252;">'Bitcoin'</span>, <span style="color: #8b2252;">'Komodo'</span>, <span style="color: #8b2252;">'Zcash'</span>, <span style="color: #8b2252;">'Bitcoin'</span>, <span style="color: #8b2252;">'Monero'</span>, <span style="color: #8b2252;">'Ethereum'</span>]
+PoW.remove(<span style="color: #8b2252;">'Bitcoin'</span>)
+<span style="color: #a020f0;">print</span>(PoW)
+<span style="color: #a020f0;">del</span> PoW[3]
+<span style="color: #a020f0;">print</span>(PoW)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Trier des éléments</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a0522d;">nombres</span> = [2, 4.5, -9, 5.75, 7, 6]
+nombres.sort()
+<span style="color: #a020f0;">print</span>(nombres)
+nombres.sort(reverse=<span style="color: #008b8b;">True</span>)
+<span style="color: #a020f0;">print</span>(nombres)
+<span style="color: #a0522d;">crypto</span> = [<span style="color: #8b2252;">'Bitcoin'</span>, <span style="color: #8b2252;">'Litecoin'</span>, <span style="color: #8b2252;">'Ethereum'</span>]
+crypto.sort()
+<span style="color: #a020f0;">print</span>(crypto)
+<span style="color: #a0522d;">lettres</span> = [<span style="color: #8b2252;">'a'</span>, <span style="color: #8b2252;">'b'</span>, <span style="color: #8b2252;">'A'</span>, <span style="color: #8b2252;">'B'</span>]
+lettres.sort(key=<span style="color: #483d8b;">str</span>.lower)
+<span style="color: #a020f0;">print</span>(lettres)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> C'est la fête du string</h2>
+<div class="outline-text-2" id="text-5">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a0522d;">name</span> = <span style="color: #8b2252;">'Python'</span>
+<span style="color: #a020f0;">for</span> i <span style="color: #a020f0;">in</span> name:
+    <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'*** '</span> + i + <span style="color: #8b2252;">' ***'</span>)
+<span style="color: #a020f0;">print</span>(name[1:4])
+<span style="color: #a0522d;">fish</span> = name[2:]
+<span style="color: #a0522d;">volcan</span> = <span style="color: #8b2252;">'Le '</span> + name + <span style="color: #8b2252;">' de la fournaise est un volcan &#224; la R&#233;union.'</span>
+<span style="color: #a0522d;">blague</span> = <span style="color: #8b2252;">'Le '</span> + fish.upper() + <span style="color: #8b2252;">" n'est pas seulement un poisson, &#231;a peut &#234;tre aussi un poison."</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Bilan</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Dans ce cours on a vu :
+</p>
+<ul class="org-ul">
+<li>l'affectation parallèle
+</li>
+<li>l'ajout et l'insertion d'éléments dans une liste
+</li>
+<li>comment enlever des éléments
+</li>
+<li>comment trier des éléments
+</li>
+<li>comment faire mumuse avec les strings
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Pour aller plus loin</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>La vidéo sur YouTube : <a href="https://youtu.be/5w0Gq7JpCH0">https://youtu.be/5w0Gq7JpCH0</a>
+</li>
+<li>La formation pour apprendre à coder une blockchain avec Python :
+<a href="https://glmp.systeme.io/acbp">ACBP</a>
+</li>
+<li>La formation pour découvrir les technologies blockchain : <a href="https://glmp.systeme.io/cdbssr">CDBSSR</a>
+</li>
+<li>La formation pour devenir full stack developer : <a href="https://glmp.systeme.io/fsd">FSD</a>
+</li>
+<li>Le pack avec un paiement en 10 fois :
+<a href="https://glmp.systeme.io/pack-3-formations-10-fois">https://glmp.systeme.io/pack-3-formations-10-fois</a>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="col-md-3"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. L'affectation parallèle</a></li>
+<li><a href="#sec-2">2. Insertion et ajout d'éléments</a></li>
+<li><a href="#sec-3">3. Enlever des éléments</a></li>
+<li><a href="#sec-4">4. Trier des éléments</a></li>
+<li><a href="#sec-5">5. C'est la fête du string</a></li>
+<li><a href="#sec-6">6. Bilan</a></li>
+<li><a href="#sec-7">7. Pour aller plus loin</a></li>
+</ul>
+</div>
+</nav>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: Laurent Garnier</p>
+<p class="date">Created: 2018-09-03 Mon 20:10</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="http://orgmode.org">Org-mode</a> 9.1.6)</p>
+</div>
+</footer>
+</body>
+</html>
