@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Computer Code Python CCP 11 : les types composites 4</title>
+<!-- 2018-09-06 Thu 18:01 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Laurent Garnier">
+<script type="text/javascript" src="post.js"></script>
+<style type="text/css">
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+</head>
+<body>
+<div id="content" class="container">
+<div class="row"><div class="col-md-9"><h1 class="title">Computer Code Python CCP 11 : les types composites 4</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Modification des éléments d'un dictionnaire</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a0522d;">dico</span> = {<span style="color: #8b2252;">'nom'</span>: <span style="color: #8b2252;">'Jeannot'</span>, <span style="color: #8b2252;">'year'</span>: 2018, <span style="color: #8b2252;">'pages'</span>: 3000}
+<span style="color: #a020f0;">print</span>(dico.keys())
+<span style="color: #a020f0;">print</span>(<span style="color: #483d8b;">type</span>(dico.keys()))
+<span style="color: #a020f0;">print</span>(<span style="color: #483d8b;">list</span>(dico.keys))
+<span style="color: #a020f0;">for</span> k, v <span style="color: #a020f0;">in</span> dico.items():
+    <span style="color: #a020f0;">print</span>((<span style="color: #8b2252;">'Key: '</span> + k + <span style="color: #8b2252;">' Value: '</span> + <span style="color: #483d8b;">str</span>(v))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Vérifier si une clé ou une valeur existe dans un dictionnaire</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a0522d;">crypto</span> = {<span style="color: #8b2252;">'btc'</span>: <span style="color: #8b2252;">'PoW'</span>, <span style="color: #8b2252;">'ppc'</span>: <span style="color: #8b2252;">'PoS'</span>, <span style="color: #8b2252;">'lsk'</span>: <span style="color: #8b2252;">'DPoS'</span>, <span style="color: #8b2252;">'xem'</span>: <span style="color: #8b2252;">'PoI'</span>}
+<span style="color: #a020f0;">if</span> <span style="color: #8b2252;">'btc'</span> <span style="color: #a020f0;">in</span> crypto.keys():
+    <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">"btc est une des cl&#233;s"</span>)
+<span style="color: #a020f0;">if</span> <span style="color: #8b2252;">'PoS'</span> <span style="color: #a020f0;">in</span> crypto.values():
+    <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">"PoS est une des valeurs"</span>)
+<span style="color: #a0522d;">wallet</span> = {<span style="color: #8b2252;">'btc'</span>: 2.5, <span style="color: #8b2252;">'eth'</span>: 4.5, <span style="color: #8b2252;">'ltc'</span>: 3}
+<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">"Dans mon portefeuille j'ai "</span> + <span style="color: #483d8b;">str</span>(wallet.get(<span style="color: #8b2252;">'btc'</span>, 0)) + <span style="color: #8b2252;">' btc.'</span>)
+<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">"Dans mon portefeuille j'ai "</span> + <span style="color: #483d8b;">str</span>(wallet.get(<span style="color: #8b2252;">'bch'</span>, 0)) + <span style="color: #8b2252;">' bch.'</span>)
+wallet.setdefault(<span style="color: #8b2252;">'bch'</span>, 1.5)
+<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">"Dans mon portefeuille j'ai "</span> + <span style="color: #483d8b;">str</span>(wallet.get(<span style="color: #8b2252;">'bch'</span>, 0)) + <span style="color: #8b2252;">' bch.'</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Comptons les caractères</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a0522d;">message</span> = <span style="color: #8b2252;">"Je m'int&#233;resse aux cryptos comme outils d'usage parce que je crois en ces technologies et non comme actifs financiers parce que je n'ai pas de formation de trader et que c'est trop volatile."</span>
+<span style="color: #a0522d;">count</span> = {}
+
+<span style="color: #a020f0;">for</span> character <span style="color: #a020f0;">in</span> message:
+    count.setdefault(character, 0)
+    <span style="color: #a0522d;">count</span>[character] += 1
+<span style="color: #a020f0;">print</span>(count)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Version jolie</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a020f0;">import</span> pprint
+
+<span style="color: #a0522d;">message</span> = <span style="color: #8b2252;">"Je m'int&#233;resse aux cryptos comme outils d'usage parce que je crois en ces technologies et non comme actifs financiers parce que je n'ai pas de formation de trader et que c'est trop volatile."</span>
+<span style="color: #a0522d;">count</span> = {}
+
+<span style="color: #a020f0;">for</span> character <span style="color: #a020f0;">in</span> message:
+    count.setdefault(character, 0)
+    <span style="color: #a0522d;">count</span>[character] += 1
+pprint.pprint(count)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Bilan</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Nous avons vu dans ce cours :
+</p>
+<ul class="org-ul">
+<li>comment modifier les éléments des dictionnaires avec des boucles
+</li>
+<li>comment vérifier si une clé ou valeur existe et comment les
+paramétrer par défaut
+</li>
+<li>comment compter les caractères et comment les afficher joliement
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Pour aller plus loin</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>La vidéo sur YouTube : <a href="https://youtu.be/O_bR8pHWoio">https://youtu.be/O_bR8pHWoio</a>
+</li>
+<li>La formation pour apprendre à coder une blockchain avec Python :
+<a href="https://glmp.systeme.io/acbp">ACBP</a>
+</li>
+<li>La formation pour découvrir les technologies blockchain : <a href="https://glmp.systeme.io/cdbssr">CDBSSR</a>
+</li>
+<li>La formation pour devenir full stack developer : <a href="https://glmp.systeme.io/fsd">FSD</a>
+</li>
+<li>Le pack avec un paiement en 10 fois :
+<a href="https://glmp.systeme.io/pack-3-formations-10-fois">https://glmp.systeme.io/pack-3-formations-10-fois</a>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="col-md-3"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. Modification des éléments d'un dictionnaire</a></li>
+<li><a href="#sec-2">2. Vérifier si une clé ou une valeur existe dans un dictionnaire</a></li>
+<li><a href="#sec-3">3. Comptons les caractères</a></li>
+<li><a href="#sec-4">4. Version jolie</a></li>
+<li><a href="#sec-5">5. Bilan</a></li>
+<li><a href="#sec-6">6. Pour aller plus loin</a></li>
+</ul>
+</div>
+</nav>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: Laurent Garnier</p>
+<p class="date">Created: 2018-09-06 Thu 18:01</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="http://orgmode.org">Org-mode</a> 9.1.6)</p>
+</div>
+</footer>
+</body>
+</html>
