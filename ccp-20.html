@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Computer Code Python CCP 20 : expressions régulières 7</title>
+<!-- 2018-09-18 Tue 21:34 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Org-mode">
+<meta name="author" content="Laurent Garnier">
+<script type="text/javascript" src="post.js"></script>
+<style type="text/css">
+/* org mode styles on top of twbs */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 18px;
+    margin-bottom: 105px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 101px;
+    background-color: #f5f5f5;
+}
+
+footer > div {
+    padding: 10px;
+}
+
+footer p {
+    margin: 0 0 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#table-of-contents {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+blockquote p {
+    font-size: 18px;
+}
+
+pre {
+    font-size: 16px;
+}
+
+.footpara {
+    display: inline-block;
+}
+
+figcaption {
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+/* from twbs docs */
+
+.bs-docs-sidebar.affix {
+    position: static;
+}
+@media (min-width: 768px) {
+    .bs-docs-sidebar {
+        padding-left: 20px;
+    }
+}
+
+/* All levels of nav */
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+}
+.bs-docs-sidebar .nav > li > a:hover,
+.bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: #A1283B;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid #A1283B;
+}
+.bs-docs-sidebar .nav > .active > a,
+.bs-docs-sidebar .nav > .active:hover > a,
+.bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    color: #A1283B;
+    background-color: transparent;
+    border-left: 2px solid #A1283B;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-docs-sidebar .nav .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 29px;
+}
+.bs-docs-sidebar .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 28px;
+    font-weight: 500;
+}
+
+/* Nav: third level (shown on .active) */
+.bs-docs-sidebar .nav .nav .nav {
+    padding-bottom: 10px;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: normal;
+}
+.bs-docs-sidebar .nav .nav .nav > li > a:hover,
+.bs-docs-sidebar .nav .nav .nav > li > a:focus {
+    padding-left: 39px;
+}
+.bs-docs-sidebar .nav .nav .nav > .active > a,
+.bs-docs-sidebar .nav .nav .nav > .active:hover > a,
+.bs-docs-sidebar .nav .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block;
+    }
+    /* Widen the fixed sidebar */
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .bs-docs-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+    .bs-docs-sidebar.affix .bs-docs-sidenav,.bs-docs-sidebar.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .bs-docs-sidebar.affix-bottom,
+    .bs-docs-sidebar.affix {
+        width: 263px;
+    }
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    'use strict';
+
+    $('.bs-docs-sidebar li').first().addClass('active');
+
+    $(document.body).scrollspy({target: '.bs-docs-sidebar'});
+
+    $('.bs-docs-sidebar').affix();
+});
+</script>
+</head>
+<body>
+<div id="content" class="container">
+<div class="row"><div class="col-md-9"><h1 class="title">Computer Code Python CCP 20 : expressions régulières 7</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Correspondre des nouvelles lignes avec le caractère <code>.</code></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Le combo <code>.*</code> pourra correspondre à tout sauf à une nouvelle
+ligne. En passant <code>re.DOTALL</code> comme second argument de
+<code>re.compile()</code>, vous pourrez faire correspondre le <code>.</code> avec <i>tous</i>
+les caractères, incluant le caractère de nouvelle ligne. 
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a020f0;">import</span> re
+
+<span style="color: #a0522d;">noNewlineRegex</span> = re.<span style="color: #483d8b;">compile</span>(<span style="color: #8b2252;">'.*'</span>)
+<span style="color: #a020f0;">print</span>(noNewlineRegex.search(<span style="color: #8b2252;">'Libert&#233;.\nEgalit&#233;.\nFraternit&#233;.'</span>).group())
+
+<span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'-'</span> * 30)
+
+<span style="color: #a0522d;">newlineRegex</span> = re.<span style="color: #483d8b;">compile</span>(<span style="color: #8b2252;">'.*'</span>, re.DOTALL)
+<span style="color: #a020f0;">print</span>(newlineRegex.search(<span style="color: #8b2252;">'Libert&#233;.\nEgalit&#233;.\nFraternit&#233;.'</span>).group())
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Récapitulatif des symboles des regex</h2>
+<div class="outline-text-2" id="text-2">
+<table class="table table-striped table-bordered table-hover table-condensed">
+
+
+<colgroup>
+<col  class="left">
+
+<col  class="left">
+</colgroup>
+<tbody>
+<tr>
+<td class="text-left"><code>?</code></td>
+<td class="text-left">0 ou 1 occurrence du groupe le précédent</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>*</code></td>
+<td class="text-left">0 ou plusieurs occurrences</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>+</code></td>
+<td class="text-left">au moins une occurrence</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>{n}</code></td>
+<td class="text-left">exactement <i>n</i> occurrences</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>{n, }</code></td>
+<td class="text-left"><i>n</i> ou plus occurrences</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>{, m}</code></td>
+<td class="text-left">de 0 à <i>m</i> occurrences</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>{n,m}</code></td>
+<td class="text-left">au moins <i>n</i> et au plus <i>m</i> occurrences</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>*?</code></td>
+<td class="text-left">version non gloutonne de <code>*</code></td>
+</tr>
+
+<tr>
+<td class="text-left"><code>+?</code></td>
+<td class="text-left">version non gloutonne de <code>+</code></td>
+</tr>
+
+<tr>
+<td class="text-left"><code>{n,m}?</code></td>
+<td class="text-left">version non gloutonne de <code>{n,m}</code></td>
+</tr>
+
+<tr>
+<td class="text-left"><code>^test</code></td>
+<td class="text-left">signifie que la chaîne doit commencer par <i>test</i></td>
+</tr>
+
+<tr>
+<td class="text-left"><code>test$</code></td>
+<td class="text-left">signifie que la chaîne doit finir par <i>test</i></td>
+</tr>
+
+<tr>
+<td class="text-left"><code>.</code></td>
+<td class="text-left">correspond à n'importe quel caractère (sauf <code>\n</code>)</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>\d</code></td>
+<td class="text-left">correspond à 1 chiffre</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>\w</code></td>
+<td class="text-left">correspond à 1 mot</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>\s</code></td>
+<td class="text-left">correspond à 1 espace</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>\D</code></td>
+<td class="text-left">tout sauf 1 chiffre</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>\W</code></td>
+<td class="text-left">tout sauf 1 mot</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>\S</code></td>
+<td class="text-left">tout sauf 1 espace</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>[abc]</code></td>
+<td class="text-left">correspond à tout caractère entre crochets</td>
+</tr>
+
+<tr>
+<td class="text-left"><code>[^abc]</code></td>
+<td class="text-left">correspond à tout caractère qui n'est pas entre crochets</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Correspondance sensible à la casse</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Normalement, les regex correspondent au texte avec la casse
+précisée.  
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a020f0;">import</span> re
+
+<span style="color: #a0522d;">regex1</span> = re.<span style="color: #483d8b;">compile</span>(<span style="color: #8b2252;">'Bonjour'</span>)
+<span style="color: #a020f0;">print</span>(regex1.search(<span style="color: #8b2252;">'Bonjour les apprentis pythoniens.'</span>).group())
+
+<span style="color: #a0522d;">regex2</span> = re.<span style="color: #483d8b;">compile</span>(<span style="color: #8b2252;">'BONJOUR'</span>)
+<span style="color: #a020f0;">if</span> regex2.search(<span style="color: #8b2252;">'Bonjour les apprentis pythoniens.'</span>) == <span style="color: #008b8b;">None</span>:
+    <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'no match'</span>)
+
+<span style="color: #a0522d;">regex3</span> = re.<span style="color: #483d8b;">compile</span>(<span style="color: #8b2252;">'bonjour'</span>)
+<span style="color: #a020f0;">if</span> regex3.search(<span style="color: #8b2252;">'Bonjour les apprentis pythoniens.'</span>)  == <span style="color: #008b8b;">None</span>:
+    <span style="color: #a020f0;">print</span>(<span style="color: #8b2252;">'no match'</span>)
+</pre>
+</div>
+
+<p>
+Mais parfois vous voulez simplement la correspondance avec les
+lettres sans vous soucier de la casse. 
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #a020f0;">import</span> re
+
+<span style="color: #a0522d;">regex1</span> = re.<span style="color: #483d8b;">compile</span>(<span style="color: #8b2252;">'Bonjour'</span>, re.I)
+<span style="color: #a020f0;">print</span>(regex1.search(<span style="color: #8b2252;">'Bonjour les apprentis pythoniens.'</span>).group())
+
+<span style="color: #a0522d;">regex2</span> = re.<span style="color: #483d8b;">compile</span>(<span style="color: #8b2252;">'BONJOUR'</span>, re.IGNORECASE)
+<span style="color: #a020f0;">print</span>(regex2.search(<span style="color: #8b2252;">'Bonjour les apprentis pythoniens.'</span>).group())
+
+<span style="color: #a0522d;">regex3</span> = re.<span style="color: #483d8b;">compile</span>(<span style="color: #8b2252;">'bonjour'</span>, re.I)
+<span style="color: #a020f0;">print</span>(regex3.search(<span style="color: #8b2252;">'Bonjour les apprentis pythoniens.'</span>).group())
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Bilan</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Nous avons vu dans ce cours :
+</p>
+<ul class="org-ul">
+<li>Comment correspondre des nouvelles lignes avec le caractère <code>.</code>
+</li>
+<li>Un récapitulatif des symboles des regex
+</li>
+<li>La gestion de la casse
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Pour aller plus loin</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>La vidéo sur YouTube : <a href="https://youtu.be/dWCDBc-rH_o">https://youtu.be/dWCDBc-rH_o</a>
+</li>
+<li>La formation pour apprendre à coder une blockchain avec Python :
+<a href="https://cours-laurent.systeme.io/acbp">ACBP</a>
+</li>
+<li>La formation pour découvrir les technologies blockchain : <a href="https://cours-laurent.systeme.io/cdbssr">CDBSSR</a>
+</li>
+<li>La formation pour devenir full stack developer : <a href="https://cours-laurent.systeme.io/fsd">FSD</a>
+</li>
+<li>Le pack avec un paiement en 10 fois :
+<a href="https://cours-laurent.systeme.io/pack-3-formations-10-fois">https://cours-laurent.systeme.io/pack-3-formations-10-fois</a>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="col-md-3"><nav id="table-of-contents">
+<div id="text-table-of-contents" class="bs-docs-sidebar">
+<ul class="nav">
+<li><a href="#sec-1">1. Correspondre des nouvelles lignes avec le caractère <code>.</code></a></li>
+<li><a href="#sec-2">2. Récapitulatif des symboles des regex</a></li>
+<li><a href="#sec-3">3. Correspondance sensible à la casse</a></li>
+<li><a href="#sec-4">4. Bilan</a></li>
+<li><a href="#sec-5">5. Pour aller plus loin</a></li>
+</ul>
+</div>
+</nav>
+</div></div></div>
+<footer id="postamble" class="">
+<div><p class="author">Author: Laurent Garnier</p>
+<p class="date">Created: 2018-09-18 Tue 21:34</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="http://orgmode.org">Org-mode</a> 9.1.6)</p>
+</div>
+</footer>
+</body>
+</html>
