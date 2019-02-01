@@ -1,0 +1,333 @@
+#+TITLE: L'année commence en février
+#+AUTHOR: Laurent Garnier
+
+
+* La lettre
+** Salutations
+   Bonjour toi,
+
+
+
+        oui tu as bien lu, l'année commence en février. 
+
+
+
+   Ben oui, en janvier la plupart des gens sont encore sous le choc des
+   fêtes de fin d'année, certains enchaînent avec les soldes, et tout le
+   monde fait la course à l'échalotte pour savoir qui fera le plus de
+   résolutions...
+
+
+
+
+   Bon en vrai, je dis que l'année commence en février parce que je suis
+   né en février et qu'en plus le mois de février est spécial.
+
+
+
+
+   Selon [[https://fr.wikipedia.org/wiki/F%25C3%25A9vrier][Wikipédia]] le nom février veut dire purifier en latin donc ça
+   paraît plutôt bien pour débuter l'année sur de bonnes bases. 
+
+
+
+
+   Au fait si février n'a que 28 jours c'est d'abord parce que l'empereur
+   Auguste qui a laissé son nom au mois d'août était jaloux de Jules
+   César qui avait 31 jours pour son mois de juillet, alors il a pris un
+   jour à février puis lors du passage au calendrier grégorien on s'est
+   aperçu que 366 jours c'était trop du coup on a décidé de raboter
+   encore février.
+
+
+
+
+   Février est le plus court, mais le plus pur.
+
+
+
+Bon c'est bien joli tout ça mais ça ne nous dit pas ce qu'il va
+advenir de cette newsletter.
+
+
+
+** Pub
+
+   Alors tout d'abord à partir de mon anniversaire jusqu'à la fin du mois
+   de février je vais annoncer une super promo sur mes formations (mais
+   chut, il faut pas le dire).
+
+
+
+** Teasing
+
+   Ensuite je vais lancer un nouveau concept totalement inédit dont
+   personne n'a encore fait l'expérience.
+
+
+
+
+   Il s'agit d'une idée révolutionnaire, une expérience pédagogique
+   unique au monde.
+
+
+
+
+   L'alliance entre l'efficacité du terrain et l'expérience pédagogique.
+
+
+
+   Bref, c'est du jamais vu.
+
+
+
+   Je suis sûr que tu meurs d'envie d'en savoir plus mais ça ne sera pas
+   pour aujourd'hui.
+
+
+
+** Repub
+
+   Comme d'habitude je te rappelle que tu peux bénéficier de séances de
+   coaching, il suffit de répondre à cet email, la première séance est
+   GRATUITE. 
+
+
+
+** Pensées positives pour toi
+
+   J'espère que tu réussis à tenir tes résolutions, voilà pour la
+   mienne : [[https://youtu.be/3O9a3MBfxlQ]]
+
+
+
+** Rituel du passage à l'action
+
+   Chaque jour est une occasion de devenir meilleur.
+
+
+
+   + Qu'as-tu fait aujourd'hui de mieux qu'hier ? 
+     Dis-moi en répondant à ce mail.
+
+   + Qu'est-ce que tu aimerais améliorer dans ta vie ? 
+     Dis-moi en répondant à ce mail.
+
+
+
+** Encouragements
+
+   Ne lâche pas l'affaire pour tes projets. 
+
+
+
+   Tu peux réussir à tenir tes résolutions si tu t'en donnes les
+   moyens et je peux t'y aider si tu en as envie. 
+
+
+
+
+** Aide
+   
+   Si ça t'intéresse il te suffit de répondre à ce mail pour me faire
+   savoir tes disponibilités. 
+
+
+
+
+
+** Fin et partage
+
+   C'est tout pour aujourd'hui.
+
+
+
+   PS : si tu lis cette lettre c'est que tu fais partie de mon club privé
+   et du coup tu peux faire un acte généreux en la partageant autour de
+   toi (par mail et/ou via les réseaux sociaux et asociaux) afin que les
+   personnes qui souhaitent s'améliorer puissent s'inscrire en cliquant
+   ici : [[http://cours-laurent.systeme.io/investis-en-toi]]
+
+
+   PPS : s'il y a un sujet que tu aimerais que je traite dis-le en
+   répondant à cette lettre.
+
+
+
+
+   N'oublie pas, chaque jour est une occasion de devenir meilleur.
+
+* Le code source
+** L'outil magique pour faire ça
+   + [[https://github.com/marsmining/ox-twbs]]
+   + la commande magique : =org-twbs-export-to-html=
+** Mon code source
+   #+BEGIN_SRC org
+     ,#+TITLE: L'année commence en février
+     ,#+AUTHOR: Laurent Garnier
+
+
+     ,* La lettre
+     ,** Salutations
+	Bonjour toi,
+
+
+
+	     oui tu as bien lu, l'année commence en février. 
+
+
+
+	Ben oui, en janvier la plupart des gens sont encore sous le choc des
+	fêtes de fin d'année, certains enchaînent avec les soldes, et tout le
+	monde fait la course à l'échalotte pour savoir qui fera le plus de
+	résolutions...
+
+
+
+
+	Bon en vrai, je dis que l'année commence en février parce que je suis
+	né en février et qu'en plus le mois de février est spécial.
+
+
+
+
+	Selon [[https://fr.wikipedia.org/wiki/F%25C3%25A9vrier][Wikipédia]] le nom février veut dire purifier en latin donc ça
+	paraît plutôt bien pour débuter l'année sur de bonnes bases. 
+
+
+
+
+	Au fait si février n'a que 28 jours c'est d'abord parce que l'empereur
+	Auguste qui a laissé son nom au mois d'août était jaloux de Jules
+	César qui avait 31 jours pour son mois de juillet, alors il a pris un
+	jour à février puis lors du passage au calendrier grégorien on s'est
+	aperçu que 366 jours c'était trop du coup on a décidé de raboter
+	encore février.
+
+
+
+
+	Février est le plus court, mais le plus pur.
+
+
+
+     Bon c'est bien joli tout ça mais ça ne nous dit pas ce qu'il va
+     advenir de cette newsletter.
+
+
+
+     ,** Pub
+
+	Alors tout d'abord à partir de mon anniversaire jusqu'à la fin du mois
+	de février je vais annoncer une super promo sur mes formations (mais
+	chut, il faut pas le dire).
+
+
+
+     ,** Teasing
+
+	Ensuite je vais lancer un nouveau concept totalement inédit dont
+	personne n'a encore fait l'expérience.
+
+
+
+
+	Il s'agit d'une idée révolutionnaire, une expérience pédagogique
+	unique au monde.
+
+
+
+
+	L'alliance entre l'efficacité du terrain et l'expérience pédagogique.
+
+
+
+	Bref, c'est du jamais vu.
+
+
+
+	Je suis sûr que tu meurs d'envie d'en savoir plus mais ça ne sera pas
+	pour aujourd'hui.
+
+
+
+     ,** Repub
+
+	Comme d'habitude je te rappelle que tu peux bénéficier de séances de
+	coaching, il suffit de répondre à cet email, la première séance est
+	GRATUITE. 
+
+
+
+     ,** Pensées positives pour toi
+
+	J'espère que tu réussis à tenir tes résolutions, voilà pour la
+	mienne : [[https://youtu.be/3O9a3MBfxlQ]]
+
+
+
+     ,** Rituel du passage à l'action
+
+	Chaque jour est une occasion de devenir meilleur.
+
+
+
+	+ Qu'as-tu fait aujourd'hui de mieux qu'hier ? 
+	  Dis-moi en répondant à ce mail.
+
+	+ Qu'est-ce que tu aimerais améliorer dans ta vie ? 
+	  Dis-moi en répondant à ce mail.
+
+
+
+     ,** Encouragements
+
+	Ne lâche pas l'affaire pour tes projets. 
+
+
+
+	Tu peux réussir à tenir tes résolutions si tu t'en donnes les
+	moyens et je peux t'y aider si tu en as envie. 
+
+
+
+
+     ,** Aide
+
+	Si ça t'intéresse il te suffit de répondre à ce mail pour me faire
+	savoir tes disponibilités. 
+
+
+
+
+
+     ,** Fin et partage
+
+	C'est tout pour aujourd'hui.
+
+
+
+	PS : si tu lis cette lettre c'est que tu fais partie de mon club privé
+	et du coup tu peux faire un acte généreux en la partageant autour de
+	toi (par mail et/ou via les réseaux sociaux et asociaux) afin que les
+	personnes qui souhaitent s'améliorer puissent s'inscrire en cliquant
+	ici : [[http://cours-laurent.systeme.io/investis-en-toi]]
+
+
+	PPS : s'il y a un sujet que tu aimerais que je traite dis-le en
+	répondant à cette lettre.
+
+
+
+
+	N'oublie pas, chaque jour est une occasion de devenir meilleur.
+
+     ,* Le code source
+     ,** L'outil magique pour faire ça
+	+ [[https://github.com/marsmining/ox-twbs]]
+	+ la commande magique : =org-twbs-export-to-html=
+     ,** Mon code source
+	,#+BEGIN_SRC org
+	,#+END_SRC
+   #+END_SRC
+   
