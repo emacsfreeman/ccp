@@ -157,6 +157,10 @@ advenir de cette newsletter.
 
    N'oublie pas, chaque jour est une occasion de devenir meilleur.
 
+* Où trouver cette lettre ?
+  + Sur [[https://emacsfreeman.github.io/ccp/newsletter_01_02_2019.html][GitHub]] :
+    [[https://emacsfreeman.github.io/ccp/newsletter_01_02_2019.html]]
+  + Sur [[https://steemit.com/newsletter/@lgsp/l-annee-commence-en-fevrier][Steemit]] : [[https://steemit.com/newsletter/@lgsp/l-annee-commence-en-fevrier]]
 * Le code source
 ** L'outil magique pour faire ça
    + [[https://github.com/marsmining/ox-twbs]]
@@ -293,7 +297,7 @@ advenir de cette newsletter.
 
 
      ,** Aide
-
+   
 	Si ça t'intéresse il te suffit de répondre à ce mail pour me faire
 	savoir tes disponibilités. 
 
@@ -322,12 +326,16 @@ advenir de cette newsletter.
 
 	N'oublie pas, chaque jour est une occasion de devenir meilleur.
 
+     ,* Où trouver cette lettre ?
+       + Sur [[https://emacsfreeman.github.io/ccp/newsletter_01_02_2019.html][GitHub]] :
+	 [[https://emacsfreeman.github.io/ccp/newsletter_01_02_2019.html]]
+       + Sur [[https://steemit.com/newsletter/@lgsp/l-annee-commence-en-fevrier][Steemit]] : [[https://steemit.com/newsletter/@lgsp/l-annee-commence-en-fevrier]]
      ,* Le code source
      ,** L'outil magique pour faire ça
 	+ [[https://github.com/marsmining/ox-twbs]]
 	+ la commande magique : =org-twbs-export-to-html=
      ,** Mon code source
 	,#+BEGIN_SRC org
+   
 	,#+END_SRC
    #+END_SRC
-   
