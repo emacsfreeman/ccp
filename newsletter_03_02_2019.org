@@ -1,0 +1,154 @@
+#+TITLE: Tout ce qui ne nous tue pas ([[https://amzn.to/2Uveetk]])
+#+AUTHOR: Laurent Garnier
+
+#+OPTIONS: toc:t h:2 num:t
+#+LATEX_HEADER: \hypersetup{colorlinks = true}
+
+
+* La lettre
+** Salutations
+   Bonjour toi,
+
+ 
+** Citation [1/3]
+   Découvrez votre formidable potentiel !
+
+   Nos ancêtres ont traversé des déserts, des montagnes et des océans sans le moindre confort. Ces exploits semblent impossible à une époque où nous sommes assistés par une technologie toujours plus moderne. Et si nous pouvions reconquérir une partie de notre force évolutionniste perdue en simulant les conditions environnementales de nos ancêtres ?
+
+   Chaque année, des millions de sportifs s'adonnent aux exigences élevées du Crossfit, relèvent des défis à l'occasion de courses à obstacles, repoussent leurs limites physiques et mentales. Ces athlètes ont en commun, sans parfois même en avoir conscience, un lien très fort avec leur environnement qui leur permet d'exploiter pleinement leur potentiel primaire.
+
+   Personne n'incarne mieux que Wim Hof les ressources inépuisables du corps humain.
+
+** Citation [2/3]
+   En effet, la capacité de celui-ci à réguler sa température corporelle dans des situations de froid extrême a provoqué un véritable séisme dans le monde scientifique et suscité de nombreuses études. À travers ses exploits, nous commençons à peine à comprendre comment l'adaptation au froid pourrait combattre les maladies auto-immunes, les douleurs chroniques et même guérir l'un des maux les plus meurtriers de notre époque, le diabète.
+
+   Scott Carney, journaliste récompensé à plusieurs reprises pour ses travaux, explore le monde fascinant des transformations que déclencher le corps humain dans des situations extrêmes et tente de répondre à cette question : pouvons-nous contrôler notre corps et utiliser l'environnement pour stimuler notre biologie enfouie ?
+
+** Citation [3/3]
+   Lorsqu'il rencontre pour la première fois Wim Hof, il ne doute pas un instant qu'il va pouvoir révéler la supercherie de celui qui s'est acquis une solide réputation dans le monde du fitness. Mais après une semaine de pratique de sa méthode, Scott Carney n'a d'autre choix que d'accepter l'évidence : il parvient lui-même aux mêmes exploits que Wim Hof. Sa propre expérience culmine dans un record à la hauteur de ses découvertes : l'ascension du Mont Kilimandjaro avec pour tout vêtement un short et une paire de chaussures de running.
+
+   Un mélange ambitieux de reportages d'investigation et de journalisme participatif, [[https://amzn.to/2Uveetk][Tout ce qui ne nous tue pas]] explore la vraie connexion entre le corps et l'esprit, et révèle la science qui nous permet de voir plus loin que nos limites apparentes.
+
+   Un document exceptionnel qui se dévore comme un roman !
+
+ 
+** Analyse
+   Voilà le quatrième de couverture de l'excellent livre [[https://amzn.to/2Uveetk][Tout ce qui ne nous tue pas]].
+
+ 
+
+   Je viens tout juste de commencer à le lire et je peux te dire que c'est très motivant. 
+
+ 
+
+   D'ailleurs voici une vidéo d'un français qui expérimente (à son niveau) le même genre de méthodes : https://www.youtube.com/watch?v=ZpmPucT_zcA&t=1s
+
+ 
+
+   Aujourd'hui pour la deuxième fois consécutives en deux semaines j'ai échoué à jeûner pendant 36h je n'ai tenu que 24h.
+
+ 
+
+   Ce n'est pas grave, la semaine prochaine j'essaierai à nouveau.
+
+ 
+
+   De toute façon même un petit jeûne de 12h c'est déjà un bon début.
+
+** Retour au réel
+   Le plus dur dans le jeûne ce n'est pas la force physique c'est la force mentale.
+
+ 
+
+   Aujourd'hui je suis allé à la bibliothèque en courant et à aucun moment je n'ai ressenti de fatigue.
+
+ 
+
+   Par contre lorsque j'étais devant mon ordinateur à coder... là c'était une toute autre histoire.
+
+ 
+
+   Le cerveau est un gros consommateur d'énergie.
+
+ 
+
+   C'est pourquoi il faut l'entraîner quotidiennement, ça tombe bien, voilà ma vidéo du jour : https://youtu.be/djd9B_7uiU4
+
+ 
+
+   Voilà c'est tout pour aujourd'hui (en cadeau bonus en pièce jointe je te mets le pdf et le html de la newsletter d'hier). 
+
+** Motivation
+   Chaque jour est une occasion de devenir meilleur.
+
+ 
+
+   Qu'as-tu fait aujourd'hui de mieux qu'hier ? Dis-moi en répondant à ce mail.
+
+ 
+
+ 
+   Qu'est-ce que tu aimerais améliorer dans ta vie ? Dis-moi en répondant à ce mail.
+
+ 
+
+ 
+
+   Ne lâche pas l'affaire pour tes projets. 
+
+ 
+
+ 
+
+   Tu peux réussir à tenir tes résolutions si tu t'en donnes les moyens et je peux t'y aider si tu en as envie. 
+
+ 
+
+ 
+
+   Si ça t'intéresse il te suffit de répondre à ce mail pour me faire savoir tes disponibilités. 
+
+ 
+
+ 
+** Fin et partage
+   C'est tout pour aujourd'hui.
+
+ 
+
+   PS : si tu lis cette lettre c'est que tu fais partie de mon club privé et du coup tu peux faire un acte généreux en la partageant autour de toi (par mail et/ou via les réseaux sociaux et asociaux) afin que les personnes qui souhaitent s'améliorer puissent s'inscrire en cliquant ici : http://cours-laurent.systeme.io/investis-en-toi
+
+   PPS : s'il y a un sujet que tu aimerais que je traite dis-le en répondant à cette lettre.
+
+ 
+   N'oublie pas, chaque jour est une occasion de devenir meilleur.
+
+
+   Chaque jour je travaille pour vous apporter toujours plus de valeur
+
+* Où trouver cette lettre ?
+** Sur GitHub  
+   1. Celle du jour :
+      [[https://emacsfreeman.github.io/ccp/newsletter_01_02_2019.html]]
+
+   2. Celle d'hier :
+      [[https://emacsfreeman.github.io/ccp/newsletter_02_02_2019.html]]
+  
+   3. Celle d'avant-hier :
+      [[https://emacsfreeman.github.io/ccp/newsletter_01_02_2019.html]]
+
+** Sur Steemit
+   1. Celle du jour :
+      [[https://steemit.com/algorithmes/@lgsp/tout-ce-qui-ne-nous-tue-pas]]
+      
+   2. Celle d'hier :
+       [[https://steemit.com/algorithmes/@lgsp/les-algorithmes-sont-ils-neutres]]
+
+   3. Celle d'avant-hier :
+      [[https://steemit.com/newsletter/@lgsp/l-annee-commence-en-fevrier]]
+
+* Les outils de code
+** L'outil magique pour faire ça
+   + [[https://github.com/marsmining/ox-twbs]]
+   + la commande magique : =org-twbs-export-to-html=
+   + mes tutos pour faire ses premiers pas avec [[https://www.youtube.com/playlist?list=PLUJNJAesbJGWi3dXmGljFTXCPt-ntQFco][org]] et [[https://www.youtube.com/playlist?list=PLUJNJAesbJGXZHtC_bTUOCwB_qkfbdHpZ][emacs]]
