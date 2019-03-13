@@ -1,0 +1,10 @@
+#+TITLE: Python pour la finance
+#+AUTHOR: Laurent Garnier
+
+* La source
+  + [[https://pythonprogramming.net/getting-stock-prices-python-programming-for-finance/][pythonprogramming.net]]
+  
+* Les modules à installer
+  [[https://pandas.pydata.org/][pandas]], [[https://pandas-datareader.readthedocs.io/en/latest/][pandas-datareader]], [[https://matplotlib.org/][matplotlib]], [[https://pypi.org/project/beautifulsoup4/][beautifulsoup4]], [[https://scikit-learn.org/stable/][scikit-learn]],
+  [[http://www.numpy.org/][numpy]]
+

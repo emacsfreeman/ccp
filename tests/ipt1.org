@@ -1,0 +1,187 @@
+#+TITLE: Informatique Pour Tous
+#+AUTHOR: Laurent Garnier
+
+#+LANGUAGE: FR
+#+OPTIONS: h:2 toc:2 num:t
+#+LATEX_HEADER: \usepackage{titletoc}
+
+* Types d'objets en Python
+** Types simples
+   + bool :: un [[https://fr.wikipedia.org/wiki/Bool%25C3%25A9en][booléen]] est une valeur (binaire) de vérité =True= ou =False=
+   + int :: /integer/ signifie entier (relatif) en anglais et désigne
+            donc un nombre entier positif ou négatif
+   + float :: /floating point number/ signifie nombre à virgule
+              flottante (les anglo-saxons utilisent un point comme
+              séparateur décimal), mathématiquement parlant il s'agit
+              des nombres décimaux de la forme $\frac{a}{10^n} =
+              a.10^{-n}$ où $a$ est un entier relatif qui sont de bonnes
+              *approximations* des nombres réels
+   + complex :: représente les nombres complexes (si tu ne connais pas
+                regarde [[https://youtu.be/HZPv7050jIc][mon cours]] sur le sujet) avec la particularité
+                d'utiliser la lettre j pour désigner le nombre
+                imaginaire vérifiant la relation $j^2 = -1$
+** Types composés
+   + list :: sorte de tableau ordonné (indexable) qu'on peut modifier
+             (mutable) qui contient des éléments (itérables) de tout
+             type (donc y compris des listes)
+   + tuple :: comme une liste mais non modifiable
+   + str :: comme un tuple mais uniquement avec des caractères
+   + set :: comme un tuple mais non indexable
+* Types simples
+** Opérations sur les types simples
+   + =a+b= :: somme de deux nombres
+   + =a-b= :: différence entre deux nombres
+   + =a*b= :: multiplication entre deux nombres
+   + =a/b= :: division décimale entre deux nombres
+   + =a//b= :: division euclidienne entre deux nombres
+   + =a%b= :: reste de la division euclidienne entre deux nombres
+   + =divmod(a,b)= :: quotient et reste de la division euclidienne
+   + =a**b= ou =pow(a,b)= :: $a^b$
+   + =abs(a)= :: valeur absolue (ou module pour les complexes)
+** Comparaisons et opérations logiques
+   + ~a==b~ :: test d'égalité, renvoie un booléen
+   + ~a!=b~ :: test de différence, renvoie un booléen
+   + =a>b= ou ~a>=b~ :: tous les tests classiques 
+   + =P and Q= :: conjonction
+   + =P or Q= :: disjonction
+   + =not P= :: négation
+** Conversions
+   + =int(a)= :: convertit en entier un flottant ou une chaîne (de
+                 caractères)
+   + =float(b)= :: convertit en flottant un entier ou une chaîne
+   + =complex(a,b)= :: convertit en complexe un couple de flottants
+   + =int(car,b)= :: donne la valeur de l'entier donné par son
+                     écriture =car= (de type chaîne) en base =b=
+   + =bin(a)= :: renvoie l'écriture en binaire de l'entier =a= 
+   + =oct(a)= :: renvoie l'écriture en octal de l'entier =a= 
+   + =hex(a)= :: renvoie l'écriture en hexadecimal de l'entier =a=
+
+* Les types composés 
+** Opérations
+   + =len(C)= :: renvoie la longueur de =C= (liste, tuple, chaîne ou
+                 ensemble)
+   + =C[i]= :: accède à l'élément d'indice =i= dans le composé =C=
+   + =A + B= :: concaténation
+   + =n * A= :: itération de concaténations
+   + =max(C)= :: renvoie le max de la collection
+   + =min(C)= :: renvoie le min de la collection
+   + =sum(C)= :: renvoie le sum de la collection
+** Comparaisons entre objets
+   + =a in A= :: teste l'appartenance
+   + =a not in A= :: teste la non appartenance
+   + ~A==B~ :: teste l'égalité ensembliste
+   + ~A!=B~ :: teste la non égalité ensembliste (il suffit d'une
+               différence)
+   + =A<B= :: test d'inégalité dans l'ordre lexicographique si =A= et
+              =B= sont des séquences (liste, tuple, chaîne)
+   + =A<B= :: test l'inclusion si =A= et =B= sont des ensembles
+** Constructions et conversions
+   + =[a,b,c]= :: crée la liste d'objets a, b, c
+   + =[]= ou =list()= :: crée la liste vide
+   + =(a,b,c)= :: crée le tuple
+   + =set()= :: crée l'ensemble vide
+   + ='abc'= ou ="abc"= :: crée la chaîne abc
+   + =""= ou =''= ou =str()= :: crée la chaîne vide
+   + =list(A)= :: convertit en liste tout type d'objet composé
+   + =set(A)= :: convertit en ensemble (élimine les répétitions)
+   + =str(A)= :: convertit en chaîne
+* Variables
+** Affectation
+   #+BEGIN_SRC python
+     maVar = 1 # j'attribue la valeur 1 à ma variable
+     type(maVar)
+     maVar = 'bonjour' # j'affecte 'bonjour' à ma variable
+     type(maVar)
+     maVar = 1
+     print(maVar)
+     maVar = maVar + 1
+     print(maVar)
+   #+END_SRC
+** Affectations multiples
+   #+BEGIN_SRC python
+     x, y = 1, 2
+     print("x = ", x)
+     print("y = ", y)
+     x, y = y, x
+     print("x = ", x)
+     print("y = ", y)
+   #+END_SRC
+
+* Opérations sur les variables
+   Toutes les opérations vues selon les types s'appliquent aux
+   variables selon leurs types.
+   
+** Opérateurs avec assignation   
+    Concentrons-nous sur les spécificités des variables à savoir les opérateurs avec assignation.
+   #+BEGIN_SRC python
+     x, y = 1, 2
+     x += y
+     y -= x
+     x *= y
+     y **= x
+     x /= y
+     y //= x
+     x %= y
+   #+END_SRC
+** Egalités structurelles et physique
+
+    #+BEGIN_SRC python
+      x = [1, 2, 3]
+      z = [1, 2, 3]
+      x == z # teste l'égalité structurelle
+      x is z # teste l'égalité physique
+      id(x) # renvoie l'adresse physique
+      id(z) # renvoie l'adresse physique
+    #+END_SRC
+
+** Modes de construction
+    #+BEGIN_SRC python
+      L = [1, 2, 3]
+      M = list((1,2,3)) # convertit le tuple en liste
+      L = [] # crée une liste vide
+
+      for i in range(10): # crée la liste par concaténation
+	  L = L + i
+
+      n = 10
+      L = n*[1]
+      M = [2]*n
+      P = [2*i for i in range(10)] # 10 nombres pairs
+      chiffres = range(10)
+      range(2, 20)
+      range(2, 20, 2)
+    #+END_SRC
+** Opérations sur les types composés
+    #+BEGIN_SRC python
+      L = [2 * i for i in range(10)]
+      len(L) # length = longueur
+      x = 3
+      x in L # test l'appartenance
+      M = [2 * i + 1 for i in range(10)]
+      L + M
+      n = 3
+      n * L
+      max(L)
+      min(L)
+      sum(L)
+    #+END_SRC
+** Opérations spécifiques aux listes
+   #+BEGIN_SRC python
+     L
+     L[3]
+     L[-1]
+     L[3:8]
+     L[3:8:2] # de 3 à 7 par pas de 2
+     L[4 :]
+     L[:5]
+     L[:] # tous les éléments
+
+     L[2] = 3
+     M
+     L[3:8] = M
+     L[:]
+     L[3:4] = []
+     L[:]
+     M = L[:]
+     M[:]
+   #+END_SRC
